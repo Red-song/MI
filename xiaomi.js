@@ -1,6 +1,6 @@
 $(function(){
 
-var imgs=$(".banner-image img");
+var imgs=$(".banner-imgone");
 var btn=$(".banner-right-li");
 var t=setInterval(function(){demo("r")},2000);
 var index=0;
@@ -231,40 +231,50 @@ $(".body-bottom-top>div").click(function(){
 
 //内容
 $("#nr-tpbox1").hover(function(){
-	$(".nr-tpbox>span").css("display","block")
+	$("#nr-tpbox1>span").css("display","block")
 },function(){
-	$(".nr-tpbox>span").css("display","none")
+	$("#nr-tpbox1>span").css("display","none")
 })
 
+$("#nr-tpbox2").hover(function(){
+  $("#nr-tpbox2>span").css("display","block")
+},function(){
+  $("#nr-tpbox2>span").css("display","none")
+})
+$("#nr-tpbox3").hover(function(){
+  $("#nr-tpbox3>span").css("display","block")
+},function(){
+  $("#nr-tpbox3>span").css("display","none")
+})
+$("#nr-tpbox4").hover(function(){
+  $("#nr-tpbox4>span").css("display","block")
+},function(){
+  $("#nr-tpbox4>span").css("display","none")
+})
 
-
-var val=0;
+var val1=0;
 
 $("#nr-tpbox1>span").click(function(){
     var index6=$(this).index();
     //alert(index6)
       if(index6==3){
-           val++;
-           if(val>=4){
-            val=3
+           val1++;
+           if(val1>=4){
+            val1=3
            }
       }else{
-        val--;
-        if(val<0){
-          val=0;
+        val1--;
+        if(val1<0){
+          val1=0;
         }
       }
       $("#nr-tpbox1 .nr-li").css({border:"none",
 background:"#ccc"})
-      $("#nr-tpbox1 .nr-li").eq(val).css({border:"1px solid #FF6700",
+      $("#nr-tpbox1 .nr-li").eq(val1).css({border:"1px solid #FF6700",
 background:"white"})
-      $("#nr-tpbig1").animate({left:-296*val})
+      $("#nr-tpbig1").animate({left:-296*val1})
   })
 	
-	
-
-
-
 $("#nr-tpbox1 .nr-li").click(function(){
     var index7=$(this).index();
     //alert(index7)
@@ -273,14 +283,115 @@ background:"#ccc"});
     $(this).css({border:"1px solid #FF6700",
 background:"white"});
         $("#nr-tpbig1").animate({left:-296*index7});
-        val=index7;
+        val1=index7;
+
+  })
+
+var val2=0;
+
+$("#nr-tpbox2>span").click(function(){
+    var index6=$(this).index();
+   // alert(index6)
+      if(index6==3){
+           val2++;
+           if(val2>=4){
+            val2=3
+           }
+      }else{
+        val2--;
+        if(val2<0){
+          val2=0;
+        }
+      }
+      $("#nr-tpbox2 .nr-li").css({border:"none",
+background:"#ccc"})
+      $("#nr-tpbox2 .nr-li").eq(val2).css({border:"1px solid #FF6700",
+background:"white"})
+      $("#nr-tpbig2").animate({left:-296*val2})
+  })
+  
+$("#nr-tpbox2 .nr-li").click(function(){
+    var index7=$(this).index();
+    //alert(index7)
+    $("#nr-tpbox2 .nr-li").css({border:"none",
+background:"#ccc"});
+    $(this).css({border:"1px solid #FF6700",
+background:"white"});
+        $("#nr-tpbig2").animate({left:-296*index7});
+        val2=index7;
+
+  })
+
+var val3=0;
+
+$("#nr-tpbox3>span").click(function(){
+    var index6=$(this).index();
+    //alert(index6)
+      if(index6==3){
+           val3++;
+           if(val3>=4){
+            val3=3
+           }
+      }else{
+        val3--;
+        if(val3<0){
+          val3=0;
+        }
+      }
+      $("#nr-tpbox3 .nr-li").css({border:"none",
+background:"#ccc"})
+      $("#nr-tpbox3 .nr-li").eq(val3).css({border:"1px solid #FF6700",
+background:"white"})
+      $("#nr-tpbig3").animate({left:-296*val3})
+  })
+  
+$("#nr-tpbox3 .nr-li").click(function(){
+    var index7=$(this).index();
+    //alert(index7)
+    $("#nr-tpbox3 .nr-li").css({border:"none",
+background:"#ccc"});
+    $(this).css({border:"1px solid #FF6700",
+background:"white"});
+        $("#nr-tpbig3").animate({left:-296*index7});
+        val3=index7;
 
   })
 
 
-       
+var val4=0;
 
+$("#nr-tpbox4>span").click(function(){
+    var index6=$(this).index();
+    //alert(index6)
+      if(index6==3){
+           val4++;
+           if(val4>=4){
+            val4=3
+           }
+      }else{
+        val4--;
+        if(val4<0){
+          val4=0;
+        }
+      }
+      $("#nr-tpbox4 .nr-li").css({border:"none",
+background:"#ccc"})
+      $("#nr-tpbox4 .nr-li").eq(val4).css({border:"1px solid #FF6700",
+background:"white"})
+      $("#nr-tpbig4").animate({left:-296*val4})
+  })
+  
+$("#nr-tpbox4 .nr-li").click(function(){
+    var index7=$(this).index();
+    //alert(index7)
+    $("#nr-tpbox4 .nr-li").css({border:"none",
+background:"#ccc"});
+    $(this).css({border:"1px solid #FF6700",
+background:"white"});
+        $("#nr-tpbig4").animate({left:-296*index7});
+        val4=index7;
 
+  })
 
 //视频
 
@@ -304,6 +415,34 @@ $(".foot-right3").hover(function(){
 })
 
 
+var bannerli=$(".banner-li");
+var bannerdisul=$(".banner-disul");
+bannerli.hover(function(){
+  var index10=$(this).index();
+  $(".banner-disul").eq(index10).show();
+},function(){
+  $(".banner-disul").hide();
+})
+bannerdisul.hover(function(){
+  $(this).show();
+},function(){
+  $(".banner-disul").hide();
+})
 
+$(".sousuo-all").hover(function(){
+   $(this).css("border","1px solid #999");
+   $(".sousuo1").css("border","1px solid #999");
+   $(".sousuo").css("border","1px solid #999");
+},function(){
+    $(this).css("border","1px solid #ccc");
+   $(".sousuo1").css("border","1px solid #ccc");
+   $(".sousuo").css("border","1px solid #ccc");
+})
+
+$(".disli-right").hover(function(){
+   $(this).css({background:"#ff6700",color:"white"})
+},function(){
+   $(this).css({background:"white",color:"#ff6700"})
+})
 
 })
